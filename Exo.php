@@ -13,16 +13,17 @@
 echo "LA GESTION DU BUDGET" . "\n";
 
 /* -------------------------------- */
+// 1. Demander à l'utilisateur de saisir son budget initial.
 
-$budget = readfile("Quel est le budget ? ") . "\n";
+// 2. Créer une boucle qui continue tant que l budget n'est pas nul.
 
-if ($nombre > 0) {
-    echo "Merci pour votre réponse.";
+    do{  
+        $budget = readline("Entrez votre budget ? ") . "\n";
     }
 
-    else {
-        echo "Veuillez indiquer votre budget.";
-    }
+    while($budget < 1);
+    echo "Budget correct";
+
 ?>
 </body>
 </html>
