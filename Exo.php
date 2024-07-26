@@ -29,11 +29,10 @@ echo "LA GESTION DU BUDGET" . "\n";
 /* -------------------------------- */
 // 3. Dans chaque itération de la boucle :  Demander à l'utilisateur de choisir entre une recette (R) ou une dépense (D).
 
-
+do  { 
+$operation = readline("Choisir entre une recette (R) et une dépense. (D) ");
 
 //3.1 Recettes
-
-$operation = readline("Choisir entre une recette (R) et une dépense. (D) ");
 
 if($operation == "R"){
 
@@ -58,6 +57,11 @@ else if($operation == "D"){
         echo "Nouveau budget : ". $budget . "\n";
     }
 }
+
+} while ($budget> 0);
+
+
+
 
 
 
