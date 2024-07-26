@@ -17,8 +17,10 @@ echo "LA GESTION DU BUDGET" . "\n";
 
 // 2. Créer une boucle qui continue tant que l budget n'est pas nul.
 
+    $budget = 0;
+
     do{  
-        $budget = readline("Entrez votre budget ? ") . "\n";
+        $budget = readline("Entrez votre budget ? ") ;
     }
 
     while($budget < 1);
@@ -31,12 +33,12 @@ echo "LA GESTION DU BUDGET" . "\n";
 
 //3.1 Recettes
 
-$operation = readline("Choisir entre une recette et une dépense. ") . "\n";
+$operation = readline("Choisir entre une recette (R) et une dépense. (D) ");
 
 if($operation == "R"){
 
-    $montant = readline("Montant de la recette? ") . "\n";
-    $budget -= $montant;
+    $recette = readline("Montant de la recette? ");
+    $budget = $recette + $budget;
     echo "Nouveau budget : ". $budget . "\n";
 }
 
@@ -44,8 +46,8 @@ if($operation == "R"){
 
 else if($operation == "D"){
 
-    $montant = readline("Montant de la dépense? ") . "\n";
-    $budget -= $montant;
+    $depense = readline("Montant de la dépense? ");
+    $budget -= $depense;
 
     if($budget < 0){
         echo "Dépassement de budget";
@@ -53,6 +55,10 @@ else if($operation == "D"){
         echo "Nouveau budget : ". $budget . "\n";
     }
 }
+
+
+
+
 
 
 
