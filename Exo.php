@@ -47,14 +47,20 @@ if($operation == "R"){
 else if($operation == "D"){
 
     $depense = readline("Montant de la dépense? ");
-    $budget -= $depense;
+    $budget = $budget - $depense;
 
     if($budget < 0){
-        echo "Dépassement de budget";
+        echo "Dépassement de budget" . "\n";
+        exit ("Fin de processus");
+
     } else {
+        echo "Pourcentage de la dépense sur le budget : ". $depense / $budget * 100 . "\n";
         echo "Nouveau budget : ". $budget . "\n";
     }
 }
+
+
+
 
 
 
