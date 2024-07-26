@@ -27,19 +27,32 @@ echo "LA GESTION DU BUDGET" . "\n";
 /* -------------------------------- */
 // 3. Dans chaque itération de la boucle :  Demander à l'utilisateur de choisir entre une recette (R) ou une dépense (D).
 
-readline("Choisir entre une dépense ou une recette ? ") . "\n";
+
 
 //3.1 Recettes
 
-if  ("recette") {
-    $recette = readline("Merci d'insérer le montant de la recette. ") . "\n";
+$operation = readline("Choisir entre une recette et une dépense. ") . "\n";
 
-    $budget = $budget + $recette . "\n";
+if($operation == "R"){
 
-    echo "Votre budget actuel est de : " . $budget . "\n";
+    $montant = readline("Montant de la recette? ") . "\n";
+    $budget -= $montant;
+    echo "Nouveau budget : ". $budget . "\n";
 }
 
 //3.2 Dépenses
+
+else if($operation == "D"){
+
+    $montant = readline("Montant de la dépense? ") . "\n";
+    $budget -= $montant;
+
+    if($budget < 0){
+        echo "Dépassement de budget";
+    } else {
+        echo "Nouveau budget : ". $budget . "\n";
+    }
+}
 
 
 
